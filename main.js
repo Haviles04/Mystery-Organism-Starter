@@ -23,7 +23,7 @@ const pAequorFactory = (num, dna) => {
     //Takes the DNA strand, finds a random base and changes it to one of the other 3 bases.
 
     mutate() {
-      let randomBaseIndex = math.floor(math.random() * 15);
+      let randomBaseIndex = Math.floor(Math.random() * 15);
       let baseToBeMutated = dna[randomBaseIndex];
       let newBase = returnRandBase();
       let mutatedArray = [];
