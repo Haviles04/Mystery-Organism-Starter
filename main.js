@@ -13,31 +13,30 @@ const mockUpStrand = () => {
   return newStrand;
 };
 
-
 // Creates new dna strand object with speciman number, DNA, and a mutated version of the DNA
 const pAequorFactory = (num, dna) => {
+  const mutate = () => {
+    let randomBaseIndex = Math.floor(Math.random() * 15);
+    let baseToBeMutated = dna[randomBaseIndex];
+    let newBase = returnRandBase();
+    let mutatedArray = [];
+
+    while (baseToBeMutated === newBase) {
+      newBase = returnRandBase();
+    }
+    if (baseToBeMutated !== newBase) {
+        mutatedArray = [...dna]
+        mutatedArray.splice(randomBaseIndex,1,newBase);
+    }
+
+    return mutatedArray;
+  };
+
   return {
     specimenNum: num,
     dna: dna,
-
-    //Takes the DNA strand, finds a random base and changes it to one of the other 3 bases.
-
-    mutate() {
-      let randomBaseIndex = Math.floor(Math.random() * 15);
-      let baseToBeMutated = dna[randomBaseIndex];
-      let newBase = returnRandBase();
-      let mutatedArray = [];
-
-      while (baseToBeMutated == returnRandBase) {
-        returnRandBase()
-
-      } if(baseToBeMutated !== returnRandBase){
-        mutatedArray = dna.splice(baseToBeMutated, 1, newBase);}
-
-      
-      return mutatedArray;
-    },
+    mutate: mutate(),
   };
-}
+};
 
-console.log(pAequorFactory(1, mockUpStrand()))
+console.log(pAequorFactory(1, mockUpStrand()));
