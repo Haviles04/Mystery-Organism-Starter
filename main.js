@@ -50,7 +50,7 @@ const pAequorFactory = (num, dna) => {
       }
       amountEqual /= 15;
       amountEqual *= 100;
-      return `Dna Speciman Number ${this.num} and Speciman Number ${
+      return `Dna Specimen Number ${this.num} and Specimen Number ${
         otherDna.num
       } are ${amountEqual.toFixed(2)} percent equal.`;
     },
