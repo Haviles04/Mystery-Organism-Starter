@@ -71,6 +71,18 @@ const pAequorFactory = (num, dna) => {
   };
 };
 
+let likelySurviveArray = []
+let i = 0;
+let likelySurvive = 1;
+while (likelySurvive <= 30){
+  let tempStrand = pAequorFactory(i, mockUpStrand());
+  if (tempStrand.likelySurvive() === true){
+    likelySurviveArray.push(tempStrand);
+    likelySurvive++;
+    i++
+  };
+}
+
 let test1 = pAequorFactory(666, mockUpStrand());
 let test2 = pAequorFactory(667, mockUpStrand());
 let test3 = pAequorFactory(999, [
@@ -90,9 +102,12 @@ let test3 = pAequorFactory(999, [
   "A",
   "A",
 ]);
+
+
 console.log(`Specimen Number: ${test1.num} Dna : ${test1.dna}`);
 console.log(`Specimen Number: ${test1.num} Mutation: ${test1.mutate()}`);
 console.log(`Specimen Number: ${test2.num} Dna : ${test2.dna}`);
 console.log(`Specimen Number: ${test2.num} Mutation: ${test2.mutate()}`);
 console.log(test1.compareDna(test2));
 console.log(test3.likelySurvive());
+console.log(likelySurviveArray);
