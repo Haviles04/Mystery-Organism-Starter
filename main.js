@@ -71,18 +71,6 @@ const pAequorFactory = (num, dna) => {
   };
 };
 
-const highSurvivalFactory = () => {
-  let highSurvivalArr = [];
-  let instancesOfHighSurvival = 0;
-
-  while (instancesOfHighSurvival < 30) {
-    if (this.pAequorFactory.likelySurvive === true) {
-      highSurvivalArr.push(this.pAequorFactory.dna);
-      highSurvivalArr++;
-    }
-  }
-};
-
 let test1 = pAequorFactory(666, mockUpStrand());
 let test2 = pAequorFactory(667, mockUpStrand());
 let test3 = pAequorFactory(999, [
@@ -108,4 +96,3 @@ console.log(`Specimen Number: ${test2.num} Dna : ${test2.dna}`);
 console.log(`Specimen Number: ${test2.num} Mutation: ${test2.mutate()}`);
 console.log(test1.compareDna(test2));
 console.log(test3.likelySurvive());
-console.log(highSurvivalFactory());
