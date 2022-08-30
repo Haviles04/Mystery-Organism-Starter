@@ -85,23 +85,6 @@ while (likelySurvive <= 30){
 
 let test1 = pAequorFactory(666, mockUpStrand());
 let test2 = pAequorFactory(667, mockUpStrand());
-let test3 = pAequorFactory(999, [
-  "G",
-  "G",
-  "G",
-  "C",
-  "C",
-  "C",
-  "C",
-  "T",
-  "C",
-  "A",
-  "C",
-  "T",
-  "A",
-  "A",
-  "A",
-]);
 
 
 console.log(`Specimen Number: ${test1.num} Dna : ${test1.dna}`);
@@ -109,5 +92,4 @@ console.log(`Specimen Number: ${test1.num} Mutation: ${test1.mutate()}`);
 console.log(`Specimen Number: ${test2.num} Dna : ${test2.dna}`);
 console.log(`Specimen Number: ${test2.num} Mutation: ${test2.mutate()}`);
 console.log(test1.compareDna(test2));
-console.log(test3.likelySurvive());
 console.log(likelySurviveArray);
